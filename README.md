@@ -1,3 +1,3 @@
 # demo-Login
 A preliminary study   
-![avatar](E:\\图片\\login-demo.png)
+![](https://github.com/imvagrant/demo-Login/blob/main/login-demo.png)
