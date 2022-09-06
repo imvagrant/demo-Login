@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <p>v-model</p>
+    <input type="text" v-model="username">
+    <!--    插值表达式-->
+    {{username}}
+    <p>v-bind</p>
+    <input type="text" v-model="url">
+    <a v-bind:href="url">点击一下</a>
+
+    <p>v-on</p>
+    <input type="button" value="--按钮--" v-on:click="show()">
+    <p>v-if/else</p>
+    <div style="width: 25px;height: 25px">
+    <input type="text" v-model="flag">
+    <img src="images/1.png" style="width: 19px;height: 27px" alt="1" v-if="flag==1||flag==12||flag==13||flag==123">
+    <img src="images/2.png" style="width: 27px;height: 27px" alt="2" v-if="flag==2||flag==12||flag==23||flag==123">
+    <img src="images/3.png" style="width: 27px;height: 27px" alt="3" v-if="flag==3||flag==13||flag==23||flag==123">
+    </div>
+
+    <div style="margin-top: 20px;margin-left: 30px;">
+        <table border="1">
+            <tr align="center">
+                <td>序号</td>
+                <td>用户名</td>
+                <td>密码</td>
+            </tr>
+           <tr v-for="(user,i) in users">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+           </tr>
+        </table>
+    </div>
+</div>
+<script src="js/axios.js"></script>
+<script src="js/vue.js"></script>
+<script>
+    new Vue({
+        el:"#app",
+        data () {
+            return {
+                users:[],
+                username: "",
+                url:"https://www.bilibili.com",
+                flag:1
+            }
+        },
+        methods:{
+            show(){
+                alert("{{url}}");
+            },
+        },
+        mounted(){//页面加载完成
+            var _this=this;
+            axios({
+                method:"get",
+                url: "http://localhost:8080/mybatis_war_exploded/HelloServlet"
+                }).then(function (resq){
+                    _this.users=resq.data;
+            })
+        }
+    });
+</script>
+
+</body>
+</html>

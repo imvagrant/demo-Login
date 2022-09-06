@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="element-ui" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/../../element-ui/lib" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../element-ui/lib" />
+      <root url="file://$PROJECT_DIR$/../../element-ui/lib/index.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

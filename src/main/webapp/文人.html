@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="js/vue.js"></script>
+<script src="element-ui/lib/index.js"></script>
+<script src="element-ui/lib/icon.js"></script>
+<script src="js/axios.js"></script>
+<link  rel="stylesheet" href="element-ui/lib/theme-chalk/index.css" type="text/css" media="all">
+<link  rel="stylesheet" href="element-ui/lib/theme-chalk/icon.css" type="text/css" media="all">
+<div id="app" style="text-align: center">
+<el-input placeholder="就是喜欢文人酱" clearable v-model="inputSearch"
+          style="width: 250px;margin-top: 25px">
+</el-input>
+    {{inputSearch}}
+
+    <br>
+    <br>
+    <p>你的犯病指数：{{selectedValue}}</p>
+    <el-select v-model="selectedValue" placeholder="喜欢文人吗" style="width: 250px;margin-top: 25px">
+        <el-option label="喜欢" value="喜欢"></el-option>
+        <el-option label="非常喜欢" value="非常喜欢"></el-option>
+        <el-option label="超级suki!" value="超级suki"></el-option>
+        <el-option label="讨厌讨厌但是喜欢最喜欢啦" value="讨厌讨厌但是喜欢最喜欢啦"></el-option>
+    </el-select>
+    <br>
+
+
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                recipes:[],
+                inputSearch:'',
+                companyType: '',
+                selectedValue:'',
+                companyTypes: [{
+                    value: '11',
+                    id: '1'
+                }, {
+                    value: '22',
+                    id: '2'
+                }, {
+                    value: '33',
+                    id: '3'
+                }, {
+                    value: '44',
+                    id: '4'
+                }],
+            }
+        },
+
+    })
+        </script>
+</body>
+</html>
